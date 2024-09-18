@@ -1,0 +1,219 @@
+.flip-card {
+    background-color: transparent;
+    width: 400px;
+    height: 270px;
+    perspective: 1000px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    border-radius: 2em;
+    backface-visibility: hidden;
+  }
+  
+  .flip-card-front {
+    background-color: #6a63ee;
+    border: 4px solid white;
+  }
+  
+  .profile-image {
+    background-color: transparent;
+    border: none;
+    margin-top: 15px;
+    border-radius: 5em;
+    width: 280px;
+    height: 120px;
+    margin-left: 50px;
+  }
+  
+  .pfp {
+    border-radius: 35em;
+    fill: white;
+  }
+  
+  .name {
+    margin-top: 15px;
+    font-size: 27px;
+    color: white;
+    font-weight: bold;
+  }
+  
+  .flip-card-back {
+    background-color:#6a63ee;
+    border: 4px solid white;
+    transform: rotateY(180deg);
+    padding: 11px;
+  }
+  
+  .description {
+    margin-top: 10px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: white
+  }
+  
+  .socialbar {
+    background-color: transparent;
+    border-radius: 3em;
+    width: 90%;
+    padding: 14px;
+    margin-top: 11px;
+    margin-left: 10px;
+    word-spacing: 24px;
+    color: white;
+  }
+  
+  .socialbar svg {
+    transition: 0.4s;
+    width: 20px;
+    height: 20px;
+    color: white
+  }
+  
+  .socialbar svg:hover {
+    color: white;
+  }
+  
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  
+
+
+
+
+  .bg {
+    /* Añade la imagen de fondo con una ruta relativa a tu imagen descargada */
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .welcome-text {
+    text-align: center;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+  }
+  h1 {
+    font-size: 50px;
+  }
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    background-color: #f5a962;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+.card{
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    border-radius: 2em;
+    background-color: #6a63ee;
+    border: 4px solid white;
+    color: white;
+}
+
+
+
+
+.table-container {
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  padding: 20px 0;
+  text-align: center ;
+  position: relative;
+}
+
+.custom-table {
+  width: 80%;
+  margin: auto;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-style: solid;
+  border-color: black;
+}
+
+.custom-table th, .custom-table td {
+  border: none;
+  padding: 20px;
+}
+
+.consultar-cell {
+  cursor: pointer;
+  text-align: center;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+
+.consultar-cell:hover {
+  background-color: gray;
+}
+
+.custom-switch-size .form-check-input {
+  width: 3rem;
+  height: 1.5rem;
+}
+
+.custom-switch-size .form-check-input::before {
+  width: 3rem;
+  height: 1.5rem;
+}
+
+.custom-switch-size .form-check-input:checked::before {
+  transform: translateX(1.5rem);
+}
+
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.pagination-container button {
+  background-color: #e9e9e9;
+  color: black;
+  border: none;
+  padding: 8px 12px;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.pagination-container button.active, .pagination-container button:hover:not([disabled]) {
+  background-color: #666;
+  color: white;
+}
+
+.pagination-container button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}

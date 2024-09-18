@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@300;400;700&family=Roboto:ital,wght@1,300&display=swap');
+
+.header-logo {
+    text-align: center;
+    user-select: none;
+    margin-top: 5%;
+    margin-bottom: 65%;
+}
+
+.header-logo p {
+    margin: 0;
+    color: white;
+}
+
+.header-logo h5 {
+    margin: 0;
+    color: white;
+    font-family: 'Koh Santepheap', serif;
+    font-size: 3em;
+    font-weight: 700;
+}
+
+.dropdown-item {
+    user-select: none;
+    background-color: #5650C3;
+    color: white;
+    transition: color 0.2s;
+    border-radius: 0px;
+    margin: 2px;
+    font-size: 1.8em;
+    transition: all 0.3s ease 0s;
+    padding-bottom: 5%;
+}
+
+
+.dropdown-item:active {
+    color: #ffc1c1;
+}
+
+.navbar-toggler {
+    color: #ffffffec;
+    transition: color 0.6s;
+}
+
+.navbar-toggler:hover {
+    color: #ffc1c1;
+}
+
+.navbar-toggler::selection {
+    color: #ffc1c1;
+}
+
+.dropdown-divider {
+    background-color: white;
+    height: 1px;
+    width: 100%;
+    margin: 1px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.dropdown-menu {
+    border-radius: 0px;
+    border: none;
+    background-color: #202225;
+}
+
+.dropdown-toggle {
+    background-color: #202225;
+    color: white;
+    border: none;
+    transition: color 0.4s;
+}
+
+.dropdown-toggle:hover {
+    color: #ffc1c1;
+}
+
+.navbar-brand {
+    user-select: none;
+    color: #ffc1c1;
+}
+
+.active {
+    color: #ff9393d3 !important;
+}
+
+.active::after {
+    content: "";
+    position: absolute;
+    left: -0.4em;
+    background-color: #ff9393d3 !important;
+    width: 10px;
+    height: 40px;
+    border-radius: 18%;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    color: var(--bs-nav-pills-link-active-color);
+    background-color: #5650C3;
+}

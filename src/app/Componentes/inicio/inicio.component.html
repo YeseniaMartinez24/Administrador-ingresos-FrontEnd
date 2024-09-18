@@ -1,0 +1,160 @@
+
+<div class="container" *ngIf="isAuth">
+    <div class="row">
+      <!-- Información del Usuario -->
+      <div class="col-md-4" style="padding: 40px;">
+        <div >
+            <div class="flip-card" *ngIf="auth.user$ | async as user ">
+                <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div class="profile-image">
+                    <img [src]="user.picture" alt="">
+                    <div class="name">
+                        {{user.nickname}}
+                    </div>
+                    </div>
+                </div>
+                <div class="flip-card-back">
+                    <div class="Description">
+                    <p class="description">
+                        Nombre: {{user.given_name}}
+                        <br><br>
+                        Apellido: {{user.family_name}}
+                        <br><br>
+                        Correo: {{user.email}}
+                    </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" style="padding: 40px; margin-left: 100px;">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Usuarios Conectados</h5>
+            <ul class="list-group">
+              <li class="list-group-item" *ngFor="let usuario of usuariosConectados">
+                <div class="d-flex justify-content-between align-items-center">
+                  <span>{{ usuario }}</span>
+                  <span class="badge bg-success rounded-pill">Activo</span>
+                </div>
+              </li>
+            </ul>
+            <div *ngIf="usuariosConectados.length === 0" class="text-muted mt-2">No hay usuarios conectados.</div>
+          </div>
+        </div>
+      </div>
+
+    
+    <div style="margin-top: 4.5rem;">
+        <hr>
+          <!-- Contenido del filtro de registro de actividades -->
+          <form [formGroup]="miFormulario">
+            
+    <form [formGroup]="miFormulario">
+        <div class="container-fluid row text-center">
+    
+          <div class="col-2">
+            <input *ngIf="switchDiario" type="date" class="form-control" id="rangoFecha1" formControlName="fechaInicio">
+            <input *ngIf="!switchDiario" type="month" class="form-control" id="rangoFecha1" formControlName="fechaInicio">
+            <label for="fechaInicio">Fecha Inicio</label>
+          </div>
+          <div class="col-2">
+            <input *ngIf="switchDiario" type="date" class="form-control" id="rangoFecha2" formControlName="fechaFin">
+            <input *ngIf="!switchDiario" type="month" class="form-control" id="rangoFecha2" formControlName="fechaFin">
+            <label for="fechaFin">Fecha Fin</label>
+          </div>
+    
+          <div class="col-4">
+            <button type="button" [class.oscuro]="esModoOscuro" class="btn btn-secondary btn-lg btn-block" id="boton-filtrar" (click)="swichInput.click()">
+              <div class="d-flex align-items-center justify-content-center h-100">
+                <span class="me-2">Mensual</span>
+                <div class="form-check form-switch custom-switch-size d-inline-block">
+                  <input class="form-check-input" (click)="swichInput.click()" type="checkbox" role="switch" id="flexSwitchCheckDefault"
+                    [(ngModel)]="switchDiario" (change)="onSwitchChange()" #swichInput>
+                </div>
+                <span class="ms-2">Diario</span>
+              </div>
+            </button>
+          </div>
+          <div class="col-4">
+            <button type="button" [class.oscuro]="esModoOscuro" class="btn btn-secondary btn-lg btn-block" id="boton-filtrar"
+              [disabled]="miFormulario.invalid" (click)="filtrarRegistros()">Filtrar Registro de Actividad
+            </button>
+            <div *ngIf="miFormulario.hasError('dateRangeInvalid')">
+              El rango de fechas no es válido.
+            </div>
+          </div>
+    
+        </div>
+      </form>
+    
+      <!-- Tabla de Datos Mensuales-->
+      <div class="table-container">
+        <table class="custom-table" *ngIf="logs && !switchDiario">
+          <thead>
+            <tr>
+                <th scope="col">Usuario</th>
+                <th scope="col">Gmail</th>
+                <th scope="col">Actividad</th>
+                <th scope="col">Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let log of logs">
+              <td>{{log.usuario_responsable}}</td>
+              <td>{{log.gmail}}</td>
+              <td>{{log.actividad}}</td>
+              <td>{{ log.fecha  }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    
+      <!-- Tabla de Datos Diarios-->
+      <div class="table-container" *ngIf="logsDiarios && switchDiario">
+        <table class="custom-table">
+          <thead>
+            <tr>
+              <th scope="col">Usuario</th>
+              <th scope="col">Gmail</th>
+              <th scope="col">Actividad</th>
+              <th scope="col">Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let log of displayedItems">
+              <td>{{log.usuario_responsable}}</td>
+              <td>{{log.gmail}}</td>
+              <td>{{log.actividad}}</td>
+              <td>{{ log.fecha}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="pagination-container">
+          <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">Anterior</button>
+    
+          <button *ngFor="let page of [].constructor(totalPages); let i = index" [class.active]="i + 1 === currentPage"
+            (click)="changePage(i + 1)">
+            {{ i + 1 }}
+          </button>
+    
+          <button (click)="changePage(currentPage + 1)" [disabled]="currentPage === totalPages">Siguiente</button>
+        </div>
+      </div>
+          </form>
+      </div>
+</div>
+</div>
+
+<div class="bg" *ngIf="!isAuth">
+    <div class="welcome-text">
+      <h1>Bienvenido</h1>
+      <p>Administrador de Ingresos y Gastos</p>
+      <a href="#" class="button" (click)="login()" >Iniciar Seción</a>
+    </div>
+  </div>
+
+  

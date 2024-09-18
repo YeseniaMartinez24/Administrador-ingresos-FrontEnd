@@ -1,0 +1,7 @@
+
+<div class="parent">
+    <header><app-header></app-header></header>
+    <main class="container">
+        <button class="btn" [class.button-mode-background-light]="theme === 'light'" [class.button-mode-background-dark]="theme === 'dark'" (click)="CambiarTema()"><i id="icon" class="fa-solid fa-moon"></i></button>
+    </main>
+</div>

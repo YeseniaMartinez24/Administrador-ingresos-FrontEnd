@@ -1,0 +1,147 @@
+.grafica-ingresos {
+    width: 60vw;
+    height: 55vh;
+}
+
+.drop-xlsx {
+    width: 100%;
+    height: 400px;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: #666 dashed 5px;
+    border-radius: 5px !important;
+    user-select: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.drop-xlsx-disable {
+    width: 100%;
+    height: 400px;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: #666 dashed 5px;
+    border-radius: 5px !important;
+    user-select: none;
+    transition: all 0.3s;
+    background-color: #66666660;
+}
+
+.drop-format {
+    background-color: #66666660;
+}
+
+.drop-xlsx:hover {
+    background-color: #66666660;
+}
+
+#container-grafica{
+    display: flex;
+    flex-direction: column; /* Alinear elementos verticalmente */
+    justify-content: center;
+    align-items: center;
+    height: 70vh; 
+}
+
+#grafica{
+    border-color: black;
+    border-style: solid;
+    height: 300px;
+    width: 600px;
+}
+
+#boton-ingresar-reporte{
+    margin-top: 20px;
+}
+
+.table-container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    padding: 20px 0;
+    text-align: center ;
+    position: relative;
+}
+
+.custom-table {
+    width: 80%;
+    margin: auto;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-collapse: separate;
+    border-spacing: 0;
+    border-style: solid;
+    border-color: black;
+}
+
+.custom-table th, .custom-table td {
+    border: none;
+    padding: 20px;
+}
+
+.consultar-cell {
+    cursor: pointer;
+    text-align: center;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.eliminar-column {
+    width: fit-content;
+    min-width: fit-content;
+    padding: 0;
+    text-align: center;
+}
+
+.btn-danger {
+    padding: 7px 10px; /* Ajusta esto según el tamaño deseado del botón */
+}
+
+.consultar-cell:hover {
+    background-color: gray;
+}
+
+.custom-switch-size .form-check-input {
+    width: 3rem;
+    height: 1.5rem;
+}
+
+.custom-switch-size .form-check-input::before {
+    width: 3rem;
+    height: 1.5rem;
+}
+
+.custom-switch-size .form-check-input:checked::before {
+    transform: translateX(1.5rem);
+}
+
+
+  .pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+  }
+  
+  .pagination-container button {
+    background-color: #e9e9e9;
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    margin: 0 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  
+  .pagination-container button.active, .pagination-container button:hover:not([disabled]) {
+    background-color: #666;
+    color: white;
+  }
+  
+  .pagination-container button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+  }

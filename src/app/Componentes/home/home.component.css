@@ -1,0 +1,120 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.home {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.home__opciones {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 30vh;
+}
+
+.home__opciones__datos {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.home__opciones__datos div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.home__opciones__datos h6 {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+.home__opciones__datos p {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+#datos_total {
+    color: #0C6CB0;
+}
+
+#datos_ingresos {
+    color: #0d9e47
+}
+
+#datos_gastos {
+    color: #E02C45
+}
+
+.seleccionar_fecha__body {
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+}
+
+.fecha_form {
+    width: 80%;
+}
+
+.home__opciones__seleccionar_fecha{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.seleccionar_fecha__fecha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+}
+
+.seleccionar_fecha__flecha {
+    font-size: 2em;
+}
+
+#boton-filtrar {
+    width: 5em;
+}
+
+.home__body {
+    margin: 7em;
+    width: 100vw;
+    height: 50vh;
+}
+
+.home__opciones__grafica {
+    width: 100%;
+}
+
+.home__grafica {
+    width: 100%;
+    height: 680px
+}
+
+.datos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.datos__grupo {
+    width: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}

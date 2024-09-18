@@ -1,0 +1,49 @@
+.scroll-top {
+    position: fixed;
+    bottom: 5px;
+    right: 2px;
+    font-size: 30px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    background-color: #202225;
+    transition: all 0.5s ease 0s;
+    border: 2px transparent solid;
+    border-radius: 50%;
+    outline: none;
+}
+
+.scroll-top:hover {
+    border: 2px #ffc1c1 solid;
+    background-color: #202225;
+    color: #ffc1c1;
+}
+
+.button-mode-background-light {
+    position: fixed;
+    right: 10px;
+    bottom: 500px;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    font-size: 30px;
+    text-align: center;
+    color: #ffffff;
+    background-color: #212529;
+    border: 5px solid #5650C3;
+}
+
+.button-mode-background-dark {
+    position: fixed;
+    right: 10px;
+    bottom: 500px;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    font-size: 30px;
+    text-align: center;
+    color: #000000;
+    background-color: #ffffff;
+    border: 5px solid #5650C3;
+}

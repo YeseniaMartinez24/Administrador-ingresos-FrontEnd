@@ -1,0 +1,60 @@
+<div class="home">
+    <div class="home__opciones">
+        <div class="home__opciones__datos">
+            <div>
+                <h6>Total: </h6>
+                <p id="datos_total">{{ totalFormato }}</p>
+            </div>
+            <div>
+                <h6>Ingresos: </h6>
+                <p id="datos_ingresos">{{ ingresoFormato }}</p>
+            </div>
+            <div>
+                <h6>Gastos: </h6>
+                <p id="datos_gastos">{{ gastoFormato}}</p>
+            </div>
+        </div>
+
+        <div class="home__opciones__seleccionar_fecha">
+            <div class="fecha_form">
+                <div *ngIf="miFormulario.hasError('dateRangeInvalid')">
+                    El rango de fechas no es válido.
+                </div>
+                <form [formGroup]="miFormulario">
+                    <div class="seleccionar_fecha__body">
+                        <div class="seleccionar_fecha__fecha">
+                            <input type="month" class="form-control" id="rangoFecha1" formControlName="fechaInicio">
+                            <label for="fechaInicio">Fecha Inicio</label>
+                        </div>
+                        <div class="seleccionar_fecha__flecha">
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </div>
+                        <div class="seleccionar_fecha__fecha">
+                            <input type="month" class="form-control" id="rangoFecha2" formControlName="fechaFin">
+                            <label for="fechaFin">Fecha Fin</label>
+                        </div>
+                        <div class="seleccionar_fecha__boton">
+                            <button type="button" [class.oscuro]="esModoOscuro" class="btn btn-secondary btn-lg btn-block" id="boton-filtrar"
+                                (click)="reset()">Reset
+                            </button>
+                            <br>
+                            <br>
+                            <button type="button" [class.oscuro]="esModoOscuro" class="btn btn-secondary btn-lg btn-block" id="boton-filtrar"
+                                [disabled]="miFormulario.invalid" (click)="filtrarRegistros()">Filtrar
+                            </button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div class="home__opciones__grafica">
+        <div class="home__grafica" id="Grafica-Principal" *ngIf="hayDatos">
+        </div>
+        <div  *ngIf="!hayDatos">
+            <h2>No hay datos disponibles</h2>
+        </div>
+    </div>
+</div>

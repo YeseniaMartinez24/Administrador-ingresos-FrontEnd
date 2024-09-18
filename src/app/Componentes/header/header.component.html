@@ -1,0 +1,65 @@
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="background-color: #5650C3;">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100 sticky-top">
+
+                <div class="header-logo w-100">
+                    <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100"
+                    id="menu">
+                    <li class="nav-item w-100" >
+                        <button [class.active]="getPath() === '/inicio'" class="nav-link align-middle px-0 dropdown-item w-100" routerLink="/inicio">
+                            <i class="fa-solid fa-house"></i>
+                        </button>
+                    </li>
+                    </ul>
+                </div>
+
+                <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100"
+                    id="menu">
+
+                    <li class="nav-item w-100">
+                        <button [class.active]="getPath() === '/home'" class="nav-link align-middle px-0 dropdown-item w-100" routerLink="/home">
+                            &nbsp;<i class="fa-sharp fa-solid fa-gauge-high"></i>
+                            <span class="ms-1 d-none d-sm-inline">
+                                Gestión
+                            </span>
+                        </button>
+                    </li>
+
+                    <li class="nav-item w-100">
+                        <button [class.active]="getPath() === '/ingresos'" class="nav-link align-middle px-0 dropdown-item w-100" routerLink="/ingresos">
+                            &nbsp;<i class="fa-solid fa-money-bill-trend-up"></i> <span class="ms-1 d-none d-sm-inline"> Ingresos</span>
+                        </button>
+                    </li>
+
+
+                    <li class="nav-item w-100">
+                        <button [class.active]="getPath() === '/gastos'" class="nav-link align-middle px-0 dropdown-item w-100" routerLink="/gastos"
+                            title="Ctrl+O">
+                            &nbsp;<i class="fa-sharp fa-solid fa-arrow-trend-down"></i> <span class="ms-1 d-none d-sm-inline">
+                                Gastos</span>
+                        </button>
+                    </li>
+
+                    
+                    <li class="nav-item w-100" *ngIf="isAuth">
+                        <button  class="nav-link align-middle px-0 dropdown-item w-100" (click)="logout()">
+                            &nbsp;<i class="fa-solid fa-right-from-bracket"></i>
+                            <span class="ms-1 d-none d-sm-inline">
+                                Cerrar Sesión
+                            </span>
+                        </button>
+                    </li>
+
+<!--                     <li class="nav-item w-100">
+                        <app-options-stick></app-options-stick>
+                    </li> -->
+                </ul>
+                
+            </div>
+        </div>
+        <div class="col py-3">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
